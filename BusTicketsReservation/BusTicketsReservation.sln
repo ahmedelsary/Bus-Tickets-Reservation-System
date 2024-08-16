@@ -13,7 +13,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BusTicketsReservation.Infra
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BusTicketsReservation.Domain", "src\BusTicketsReservation.Domain\BusTicketsReservation.Domain.csproj", "{8DA880DB-D901-456E-A0A7-4989EA79BFC8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusTicketsReservation.WebApi", "src\BusTicketsReservation.WebApi\BusTicketsReservation.WebApi.csproj", "{A405A3B4-2939-4078-9A46-FB9DDECEBA41}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BusTicketsReservation.WebApi", "src\BusTicketsReservation.WebApi\BusTicketsReservation.WebApi.csproj", "{A405A3B4-2939-4078-9A46-FB9DDECEBA41}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusReservation.Tests", "tests\BusReservation.Tests\BusReservation.Tests.csproj", "{FABA4112-ED23-4313-B144-EBE4BC3BED72}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -37,6 +39,10 @@ Global
 		{A405A3B4-2939-4078-9A46-FB9DDECEBA41}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A405A3B4-2939-4078-9A46-FB9DDECEBA41}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A405A3B4-2939-4078-9A46-FB9DDECEBA41}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FABA4112-ED23-4313-B144-EBE4BC3BED72}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FABA4112-ED23-4313-B144-EBE4BC3BED72}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FABA4112-ED23-4313-B144-EBE4BC3BED72}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FABA4112-ED23-4313-B144-EBE4BC3BED72}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -46,6 +52,7 @@ Global
 		{BBDCF138-6F6D-428E-8E30-92F3C8A9D904} = {2CA13DA0-52BB-4EAC-842E-22106BAF5CA3}
 		{8DA880DB-D901-456E-A0A7-4989EA79BFC8} = {2CA13DA0-52BB-4EAC-842E-22106BAF5CA3}
 		{A405A3B4-2939-4078-9A46-FB9DDECEBA41} = {2CA13DA0-52BB-4EAC-842E-22106BAF5CA3}
+		{FABA4112-ED23-4313-B144-EBE4BC3BED72} = {76E7D473-7512-4156-9ECD-05D8D4ABA378}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D96B56AA-93BC-4DDB-9CE7-ABB5E3BD9BEB}
