@@ -341,3 +341,4 @@ healthchecksdb
 DowJones\.ProductSettings\.API/logs/
 
 .ionide
+/BusTicketsReservation/src/BusTicketsReservation.WebApi/Logs/log-20240817.txt
