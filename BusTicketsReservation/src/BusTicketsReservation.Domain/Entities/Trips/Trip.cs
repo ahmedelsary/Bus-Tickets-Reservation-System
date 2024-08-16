@@ -21,4 +21,7 @@ public class Trip:BaseEntity
     public double Distance { get; private set; }
     public int BusId { get; private set; }
     public virtual Bus Bus { get; private set; }
+
+    public bool HasCapacityFor(int seatCount) => Bus.Capacity >= seatCount;
+
 }

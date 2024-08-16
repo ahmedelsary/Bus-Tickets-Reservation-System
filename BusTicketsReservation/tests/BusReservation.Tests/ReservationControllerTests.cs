@@ -9,6 +9,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System;
 using BusTicketsReservation.Application.Commands.Reservations;
+using BusTicketsReservation.Domain.DomainServices.Reservations;
 
 namespace BusReservation.Tests
 {
@@ -36,7 +37,7 @@ namespace BusReservation.Tests
             // Seed the database
             SeedDatabase();
 
-            _ticketsHandler = new TicketsRequestHandler(_context);
+            _ticketsHandler = new TicketsRequestHandler(_context,new ReservationService());
 
         }
 

@@ -1,4 +1,5 @@
 ﻿using BusTicketsReservation.Domain.Common;
+using BusTicketsReservation.Domain.DomainServices.Reservations;
 using BusTicketsReservation.Domain.Entities.Reservations;
 using BusTicketsReservation.Domain.Entities.Users;
 using MediatR;
@@ -39,10 +40,13 @@ public class TicketDto
 public class TicketsRequestHandler : IRequestHandler<TicketsRequest, TicketsResponse>
 {
     private readonly IBusReservationContext _context;
+    private readonly ReservationService _reservationService;
 
-    public TicketsRequestHandler(IBusReservationContext context)
+
+    public TicketsRequestHandler(IBusReservationContext context, ReservationService reservationService)
     {
         _context = context;
+        _reservationService = reservationService;
     }
 
     public async Task<TicketsResponse> Handle(TicketsRequest request, CancellationToken cancellationToken)
@@ -63,14 +67,11 @@ public class TicketsRequestHandler : IRequestHandler<TicketsRequest, TicketsResp
             return new TicketsResponse { Message =  $"seat {string.Join(",", reservedSeats)} is already reserved" };
         }
 
-        if (trip.Bus.Capacity < request.Seats.Count())
+        if (!trip.HasCapacityFor(request.Seats.Count()))
         {
             return new TicketsResponse { Message = "no capacity in the bus" };
         }
-
-        var pricePerSeat = 10m; // Example pricing
-        var discount = request.Seats.Count() > 5 ? 0.1m : 0m;
-        var totalPrice = request.Seats.Count() * pricePerSeat * (1 - discount);
+        var totalPrice = _reservationService.CalculateTotalPrice(request.Seats.Count(),10M);
 
         var reservations = new List<Reservation>();
 
