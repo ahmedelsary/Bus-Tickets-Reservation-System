@@ -20,8 +20,15 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddApplication();
 builder.Services.AddInfrastructure(builder.Configuration);
-builder.Services.AddLogging(loggingBuilder => loggingBuilder.AddSerilog());
 
+builder.Logging.AddConfiguration(builder.Configuration.GetSection("Logging"));
+Log.Logger = new LoggerConfiguration()
+    .ReadFrom.Configuration(builder.Configuration)
+    .WriteTo.Console()
+    .WriteTo.File("Logs/log-.txt", rollingInterval: RollingInterval.Day)
+    .CreateLogger();
+
+builder.Host.UseSerilog();
 var app = builder.Build();
 await app.MigrateDatabase();
 
