@@ -2,6 +2,7 @@ using System.Text.Json.Serialization;
 using BusTicketsReservation.Application;
 using BusTicketsReservation.Infrastructure;
 using BusTicketsReservation.Infrastructure.Context;
+using BusTicketsReservation.WebApi.Configuration;
 using BusTicketsReservation.WebApi.Middlewares;
 using Microsoft.EntityFrameworkCore;
 using Serilog;
@@ -22,6 +23,8 @@ builder.Services.AddInfrastructure(builder.Configuration);
 builder.Services.AddLogging(loggingBuilder => loggingBuilder.AddSerilog());
 
 var app = builder.Build();
+await app.MigrateDatabase();
+
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
@@ -38,3 +41,5 @@ app.UseAuthorization();
 app.MapControllers();
 
 app.Run();
+
+

@@ -41,8 +41,6 @@ public class TicketsRequestHandler : IRequestHandler<TicketsRequest, TicketsResp
 {
     private readonly IBusReservationContext _context;
     private readonly ReservationService _reservationService;
-
-
     public TicketsRequestHandler(IBusReservationContext context, ReservationService reservationService)
     {
         _context = context;
