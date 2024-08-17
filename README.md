@@ -40,8 +40,8 @@ BODY:
 GET:{{baseUrl}}/api/Reservation/frequent-trip
 ```
 
-![](C:\work\Bus-Tickets-Reservation-System\images\frequent-trips.png)
+![](images/frequent-trips.png)
 
 #### Result of running Test cases
 
-![](C:\work\Bus-Tickets-Reservation-System\images\tests.png)
+![](images/tests.png)
