@@ -17,9 +17,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BusTicketsReservation.WebAp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusReservation.Tests", "tests\BusReservation.Tests\BusReservation.Tests.csproj", "{FABA4112-ED23-4313-B144-EBE4BC3BED72}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "postman_collection", "postman_collection", "{90C0338C-8C1C-44A6-89DD-74CDA9C31DB7}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{0A9E2518-046D-4CFB-BC87-2591B89B44E9}"
 	ProjectSection(SolutionItems) = preProject
-		..\..\..\Users\ahmed\OneDrive\Desktop\Bus Tickets Reservation System.postman_collection.json = ..\..\..\Users\ahmed\OneDrive\Desktop\Bus Tickets Reservation System.postman_collection.json
+		postman_collection\Bus Tickets Reservation System.postman_collection.json = postman_collection\Bus Tickets Reservation System.postman_collection.json
 	EndProjectSection
 EndProject
 Global

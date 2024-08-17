@@ -1,0 +1,83 @@
+{
+	"info": {
+		"_postman_id": "20558059-6d59-45f9-81ba-275fcc7ef66c",
+		"name": "Bus Tickets Reservation System",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "book-tickets",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userEmail\":\"example@gamil.com\",\r\n    \"tripRoute\":\"Cairo-Aswan\", \r\n    \"seats\":[\"A1\",\"A2\",\"A3\"]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/api/Reservation/book-tickets",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"Reservation",
+						"book-tickets"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "frequent-trip",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/api/Reservation/frequent-trip",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"Reservation",
+						"frequent-trip"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "https://localhost:7029",
+			"type": "default"
+		}
+	]
+}
