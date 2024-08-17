@@ -14,7 +14,7 @@ This project contains two Apis.
 
 test using Postman (you can also run a unit test project).
 
-![](images\BookTickets.png)
+![](images/BookTickets.png)
 
 example of error 
-![](images\BookTickets-error.png)
+![](images/BookTickets-error.png)
