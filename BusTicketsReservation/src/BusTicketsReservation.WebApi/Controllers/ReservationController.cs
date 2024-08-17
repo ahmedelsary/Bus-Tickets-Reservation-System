@@ -1,4 +1,5 @@
 ﻿using BusTicketsReservation.Application.Commands.Reservations;
+using BusTicketsReservation.Application.Queries.GetFrequentTripQuery;
 using BusTicketsReservation.Domain.Common;
 using BusTicketsReservation.Domain.Entities.Reservations;
 using BusTicketsReservation.Domain.Entities.Users;
@@ -32,7 +33,15 @@ namespace BusTicketsReservation.WebApi.Controllers
             return Ok(response);
         }
 
-        
+
+        [HttpGet("frequent-trip")]
+        public async Task<IActionResult> FrequentTrip()
+        {
+            var request = new GetFrequentTripsQuery();
+            var response = await _mediator.Send(request);
+            return Ok(response);
+        }
+
     }
 
 }

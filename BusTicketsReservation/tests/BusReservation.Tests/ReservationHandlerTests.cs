@@ -4,16 +4,13 @@ using BusTicketsReservation.Domain.Entities.Trips;
 using BusTicketsReservation.Domain.Entities.Users;
 using BusTicketsReservation.Domain.Shared.Enums;
 using BusTicketsReservation.Infrastructure.Context;
-using BusTicketsReservation.WebApi.Controllers;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using System;
 using BusTicketsReservation.Application.Commands.Reservations;
 using BusTicketsReservation.Domain.DomainServices.Reservations;
 
 namespace BusReservation.Tests
 {
-    public class ReservationControllerTests
+    public class ReservationHandlerTests
     {
         private BusReservationContext _context;
         private TicketsRequestHandler _ticketsHandler;
@@ -24,9 +21,6 @@ namespace BusReservation.Tests
             var options = new DbContextOptionsBuilder<BusReservationContext>()
                 .UseSqlServer("Server=localhost;Database=BusTicketsReservationTestDb; Integrated Security=True;TrustServerCertificate=True")
                 .Options;
-            //var options = new DbContextOptionsBuilder<BusReservationContext>()
-            //    .UseInMemoryDatabase("BusTicketsReservationTestDb")
-            //    .Options;
 
             _context = new BusReservationContext(options);
 
@@ -63,7 +57,7 @@ namespace BusReservation.Tests
         }
 
         [Test]
-        public async Task BookTickets_ShouldSuccess_WhenSeatsIsAvailable()
+        public async Task BookTickets_ShouldSuccessNullMessage_WhenSeatsIsAvailable()
         {
             // Arrange
             var request = new TicketsRequest
@@ -80,7 +74,7 @@ namespace BusReservation.Tests
             Assert.IsNull(result?.Message);
         }
         [Test]
-        public async Task BookTickets_ShouldFail_WhenSeatsAreAlreadyReserved()
+        public async Task BookTickets_ShouldFailNotNullMessage_WhenSeatsAreAlreadyReserved()
         {
             // Arrange
             var userId = 50; // _context.GetNextSequenceValue(nameof(User));
@@ -113,7 +107,7 @@ namespace BusReservation.Tests
             Assert.IsNotNull(result?.Message);
         }
         [Test]
-        public async Task BookTicket_ShouldApplyDiscount_WhenMoreThan5SeatsBooked()
+        public async Task BookTickets_ShouldApplyDiscount_WhenMoreThan5SeatsBooked()
         {
             // Arrange
             var request = new TicketsRequest
